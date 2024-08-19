@@ -20,6 +20,6 @@ x = 2 * np.pi * frequency * time
 cosine_values = np.cos(x)
 sine_values = np.sin(x)
 
-U.simple_harmonic_plot(time, cosine_values, sine_values)
+U.interference(time, cosine_values, sine_values)
 
 #-----------------------------------------------------------------------------------------#

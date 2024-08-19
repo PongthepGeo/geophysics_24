@@ -29,3 +29,27 @@ def simple_harmonic_plot(distance, cosine_values, sine_values):
     plt.show()
 
 #-----------------------------------------------------------------------------------------#
+
+def simple_harmonic_plot(distance, cosine_values, sine_values):
+    plt.plot(distance, cosine_values)
+    plt.plot(distance, sine_values)
+    plt.xlabel('Distance (m)')
+    plt.ylabel('Amplitude')
+    plt.legend(['Cosine', 'Sine'], loc='upper right')
+    plt.title('Cosine and Sine Waves')
+    plt.savefig('figure_out/' + 'simple_har.png', format='png', bbox_inches='tight', transparent=True, pad_inches=0)
+    plt.show()
+
+#-----------------------------------------------------------------------------------------#
+def interference(distance, cosine_values, sine_values):
+    plt.plot(distance, cosine_values, linestyle='--', linewidth=0.5)
+    plt.plot(distance, sine_values, linestyle='--', linewidth=0.5)
+    plt.plot(distance, (cosine_values - sine_values))
+    plt.xlabel('Distance (m)')
+    plt.ylabel('Amplitude')
+    plt.legend(['Cosine', 'Sine', 'New Wave'], loc='upper left')
+    plt.title('Interference')
+    plt.savefig('figure_out/' + 'interference.png', format='png', bbox_inches='tight', transparent=True, pad_inches=0.1)
+    plt.show()
+
+#-----------------------------------------------------------------------------------------#
