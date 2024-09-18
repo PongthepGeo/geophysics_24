@@ -27,6 +27,7 @@ m_rho = density_map.flatten()
 gravity_profile = np.zeros_like(x_obs_points, dtype=float)
 
 #-----------------------------------------------------------------------------------------#
+total_obs_points = len(x_obs_points)
 
 # Compute the gravitational effect at each observation point along the x-axis
 for obs_idx, x_obs in enumerate(x_obs_points):
@@ -51,6 +52,11 @@ for obs_idx, x_obs in enumerate(x_obs_points):
     g_z = np.dot(A, m_rho)
     # Store the result in the gravity profile array
     gravity_profile[obs_idx] = g_z[0]
+
+    # Simple progress count
+    count = obs_idx + 1  # Update count
+    percentage_done = (count / total_obs_points) * 100
+    print(f"Progress: {percentage_done:.2f}% ({count}/{total_obs_points})")
 
 #-----------------------------------------------------------------------------------------#
 
