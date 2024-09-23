@@ -9,7 +9,8 @@ from PIL import Image
 import os
 #-----------------------------------------------------------------------------------------#
 
-density_map = np.load('data_out/density_map.npy')
+# density_map = np.load('data_out/density_map.npy')
+density_map = np.load('midterm/data_out/density_map.npy')
 
 #-----------------------------------------------------------------------------------------#
 
@@ -47,7 +48,7 @@ for obs_idx, x_obs in enumerate(x_obs_points):
                 A[0, i * n_x + j] = 0  
             else:
                 # Gravitational prism kernel for the pixel (x_j, y_i)
-                A[0, i * n_x + j] = -G * (y_pixel * np.log(x_pixel + r) - x_pixel * np.log(y_pixel + r)) / r**2
+                A[0, i * n_x + j] = G * (-y_pixel * np.log(x_pixel + r) - x_pixel * np.log(y_pixel + r)) / r**2
     # Compute the gravitational effect g_z = A * m_rho for the current observation point
     g_z = np.dot(A, m_rho)
     # Store the result in the gravity profile array

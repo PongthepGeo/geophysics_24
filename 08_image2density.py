@@ -9,7 +9,8 @@ from PIL import Image
 import os
 #-----------------------------------------------------------------------------------------#
 
-img = Image.open('dataset/model.png')
+# img = Image.open('dataset/model.png')
+img = Image.open('dataset/test.png')
 output_dir = 'data_out' # save as npy
 
 #-----------------------------------------------------------------------------------------#
